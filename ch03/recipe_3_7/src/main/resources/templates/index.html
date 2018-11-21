@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{main.title}">Spring Boot Recipes - Library</title>
+</head>
+<body>
+
+<h3>Language</h3>
+<div>
+    <a href="?locale=nl" th:text="#{main.language.nl}">NL</a> |
+    <a href="?locale=en" th:text="#{main.language.en}">EN</a>
+</div>
+
+<h1 th:text="#{index.title}">Library</h1>
+<div>
+    <a th:href="@{/books.html}" href="#" th:text="#{index.books.link}">List of books</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+<h1>Orders</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Id</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${orderStat.count}">1</td>
+                <td th:text="${order.id}"></td>
+                <td th:text="${#numbers.formatCurrency(order.amount)}" style="text-align: right"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

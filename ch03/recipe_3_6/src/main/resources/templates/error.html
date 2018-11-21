@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Recipes - Library</title>
+</head>
+<body>
+<h1>Oops something went wrong, we don't know what but we are going to work on it!</h1>
+
+<div>
+    <div>
+        <span><strong>Status</strong></span>
+        <span th:text="${status}"></span>
+    </div>
+    <div>
+        <span><strong>Error</strong></span>
+        <span th:text="${error}"></span>
+    </div>
+    <div>
+        <span><strong>Message</strong></span>
+        <span th:text="${message}"></span>
+    </div>
+    <div th:if="${exception != null}">
+        <span><strong>Exception</strong></span>
+        <span th:text="${exception}"></span>
+    </div>
+    <div th:if="${parameters != null}">
+        <h3>Parameters</h3>
+        <span th:each="parameter :${parameters}">
+            <div th:text="${parameter.key} + ' : ' + ${#strings.arrayJoin(parameter.value, ',')}"></div>
+        </span>
+    </div>
+    <div th:if="${trace != null}">
+        <h3>Stacktrace</h3>
+        <span th:text="${trace}"></span>
+    </div>
+</div>
+</body>
+</html>
